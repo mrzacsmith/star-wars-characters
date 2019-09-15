@@ -7,14 +7,20 @@ import "./App.css";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
+  const [next, setNext] = useState([]);
 
   useEffect(() => {
     axios
       .get(`https://swapi.co/api/people`)
       .then(response => {
         const charData = response.data.results;
-        // console.log(charData);
+        // console.log("pagination", response.data);
+        // console.log("charData", charData);
         setCharacters(charData);
+        // console.log("next", response.data.next);
+        const nextPage = response.data.next;
+        setNext(nextPage);
+        console.log("next page", nextPage);
       })
       .catch(error => {
         console.log("The data was not found", error);
@@ -31,6 +37,7 @@ const App = () => {
           return <CharacterCard key={uuid()} characters={character} />;
         })}
       </div>
+      <p>Next {}</p>
     </div>
   );
 };

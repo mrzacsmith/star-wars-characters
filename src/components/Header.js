@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./data/Star-Wars-Logo.png";
+// import logo from "./data/Star-Wars-Logo.png";
 
 const Header = () => {
   return (

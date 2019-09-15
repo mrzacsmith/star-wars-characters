@@ -50,9 +50,21 @@ p {
 
 .char-card {
   background: white;
-  opacity: 0.85;
+  opacity: 0.8;
   margin: 1rem;
   padding: 1rem;
   width: 45%;
   border-radius: 0.5rem;
+}
+
+.char-card:hover {
+  transform: scaleY(1.1);
+  transform: scaleX(1.01);
+  transform-origin: bottom;
+  opacity: 0.92;
+  transition: all 0.1s linear;
+}
+
+a {
+  color: white;
 }
