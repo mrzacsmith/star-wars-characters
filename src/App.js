@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import CharacterCard from "./components/CharacterCard.js";
+import "./App.css";
+// import CharacterList from "./components/CharacterList.js";
 
-function App() {
+const App = () => {
+  const [characters, setCharacters] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`https://swapi.co/api/people`)
+      .then(response => {
+        const charData = response.data.results;
+        // console.log(charData);
+        setCharacters(charData);
+      })
+      .catch(error => {
+        console.log("The data was not found", error);
+      });
+  }, []);
+
+  console.log("after useEffect", characters);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      {characters.map(character => {
+        return <CharacterCard name={character.name} />;
+      })}
     </div>
   );
-}
+};
 
 export default App;
