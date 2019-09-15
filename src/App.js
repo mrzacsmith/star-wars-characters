@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import uuid from "uuid";
 import CharacterCard from "./components/CharacterCard.js";
+import Header from "./components/Header.js";
 import "./App.css";
-// import CharacterList from "./components/CharacterList.js";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -20,13 +21,16 @@ const App = () => {
       });
   }, []);
 
-  console.log("after useEffect", characters);
+  // console.log("after useEffect", characters);
 
   return (
-    <div className="container">
-      {characters.map(character => {
-        return <CharacterCard name={character.name} />;
-      })}
+    <div className="main">
+      <Header />
+      <div className="container">
+        {characters.map(character => {
+          return <CharacterCard key={uuid()} characters={character} />;
+        })}
+      </div>
     </div>
   );
 };

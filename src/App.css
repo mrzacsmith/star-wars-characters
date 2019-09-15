@@ -1,33 +1,58 @@
+body {
+  background-image: url("./components/data/star-wars.jpeg");
+  /* opacity: 0.8; */
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 2.8rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h2 {
+  font-size: 2.4rem;
+}
+
+h3 {
+  font-size: 2.2rem;
+}
+
+p {
+  font-size: 2rem;
+}
+.main {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+}
+.header {
+  color: yellow;
+  text-align: center;
+  font-size: 6rem;
 }
 
-.App-link {
-  color: #61dafb;
+.header img {
+  height: 80px;
+  width: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.char-card {
+  background: white;
+  opacity: 0.85;
+  margin: 1rem;
+  padding: 1rem;
+  width: 45%;
+  border-radius: 0.5rem;
 }

@@ -1,10 +1,13 @@
 import React from "react";
 
 const CharacterCard = props => {
+  // console.log(props);
+  const { name, height, mass } = props.characters;
   return (
-    <div>
-      <h3>CharacterCard!</h3>
-      <p>Name:{props.name}</p>
+    <div className="char-card">
+      <h2>Name: {name}</h2>
+      <p>Height: {height} cm</p>
+      <p>Mass: {mass} kg</p>
     </div>
   );
 };
